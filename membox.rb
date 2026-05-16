@@ -5,24 +5,42 @@
 class Membox < Formula
   desc "Memory Box — git-like Mac backup powered by rsync"
   homepage "https://github.com/up1512001/memorybox"
-  version "0.0.4"
+  version "0.1.0"
   license "MIT"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/up1512001/memorybox/releases/download/v0.0.4/memorybox_0.0.4_darwin_amd64.tar.gz"
-    sha256 "d8b85dbb24904ace2b8b66c23ef8253082adf8991f77540494288d933fbf12b9"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/up1512001/memorybox/releases/download/v0.1.0/memorybox_0.1.0_darwin_amd64.tar.gz"
+      sha256 "8bd5894f2ec01fbef4494b658b500fed3420807ee965da2a5f410e4211ea7851"
 
-    define_method(:install) do
-      bin.install "membox"
+      define_method(:install) do
+        bin.install "membox"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/up1512001/memorybox/releases/download/v0.1.0/memorybox_0.1.0_darwin_arm64.tar.gz"
+      sha256 "f12147dcbbb20a49180255df22dd345e275a54bce76da55ac44cb5acd27122c2"
+
+      define_method(:install) do
+        bin.install "membox"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/up1512001/memorybox/releases/download/v0.0.4/memorybox_0.0.4_darwin_arm64.tar.gz"
-    sha256 "a2cdb4d1e114eb1de317b839c9eb4809bb9a44b18c2d7309f41de1409da4fb45"
 
-    define_method(:install) do
-      bin.install "membox"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/up1512001/memorybox/releases/download/v0.1.0/memorybox_0.1.0_linux_amd64.tar.gz"
+      sha256 "50425878a976176de386fd883f965fa40de2b38b0857df10f75462e1f0f6d2ce"
+      define_method(:install) do
+        bin.install "membox"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/up1512001/memorybox/releases/download/v0.1.0/memorybox_0.1.0_linux_arm64.tar.gz"
+      sha256 "e46153d57bb6031505ba2c72f0d7495fd508b7af55deb7c3453ac5c75405d0eb"
+      define_method(:install) do
+        bin.install "membox"
+      end
     end
   end
 
