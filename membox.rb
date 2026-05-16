@@ -5,21 +5,21 @@
 class Membox < Formula
   desc "Memory Box — git-like Mac backup powered by rsync"
   homepage "https://github.com/up1512001/memorybox"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/up1512001/memorybox/releases/download/v0.0.3/memorybox_0.0.3_darwin_amd64.tar.gz"
-    sha256 "641cf4b31ce0c100f2ffa96ae93ce9ea7116dae4388a96bbd9d8d70747dbbd20"
+    url "https://github.com/up1512001/memorybox/releases/download/v0.0.4/memorybox_0.0.4_darwin_amd64.tar.gz"
+    sha256 "d8b85dbb24904ace2b8b66c23ef8253082adf8991f77540494288d933fbf12b9"
 
     define_method(:install) do
       bin.install "membox"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/up1512001/memorybox/releases/download/v0.0.3/memorybox_0.0.3_darwin_arm64.tar.gz"
-    sha256 "bd0ebfffe107f5875743156f76e1b2db928ce973994518256e24b26d46746fd8"
+    url "https://github.com/up1512001/memorybox/releases/download/v0.0.4/memorybox_0.0.4_darwin_arm64.tar.gz"
+    sha256 "a2cdb4d1e114eb1de317b839c9eb4809bb9a44b18c2d7309f41de1409da4fb45"
 
     define_method(:install) do
       bin.install "membox"
