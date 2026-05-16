@@ -5,21 +5,21 @@
 class Membox < Formula
   desc "Memory Box — git-like Mac backup powered by rsync"
   homepage "https://github.com/up1512001/memorybox"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/up1512001/memorybox/releases/download/v0.3.0/memorybox_0.3.0_darwin_amd64.tar.gz"
-      sha256 "95d4aa38aa3fd15b28eb3feeec2cb27230228c9b250781353a40979bbdd75c7f"
+      url "https://github.com/up1512001/memorybox/releases/download/v0.4.0/memorybox_0.4.0_darwin_amd64.tar.gz"
+      sha256 "abc3ff8feea7a9383a30ed48af2021dec513865c5b7d5eee646e0b9281a33692"
 
       define_method(:install) do
         bin.install "membox"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/up1512001/memorybox/releases/download/v0.3.0/memorybox_0.3.0_darwin_arm64.tar.gz"
-      sha256 "aa1b0a934ccafd775cea545c1a54c346c2a372ab981aff2136518efe3dac0e60"
+      url "https://github.com/up1512001/memorybox/releases/download/v0.4.0/memorybox_0.4.0_darwin_arm64.tar.gz"
+      sha256 "484da85441326e3f04ebe172de10e9a3fe8bb751555ad70f2e40e7f7442756c2"
 
       define_method(:install) do
         bin.install "membox"
@@ -29,15 +29,15 @@ class Membox < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/up1512001/memorybox/releases/download/v0.3.0/memorybox_0.3.0_linux_amd64.tar.gz"
-      sha256 "fd9a6389f1720c73090f2fa32c216686209d37b1cd2f61548bcd14b82332bbb5"
+      url "https://github.com/up1512001/memorybox/releases/download/v0.4.0/memorybox_0.4.0_linux_amd64.tar.gz"
+      sha256 "a3b7e5a893fc00ec6b88af8b7c90b48ee132c76dd4e939249b963e8ecfa5c9bb"
       define_method(:install) do
         bin.install "membox"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/up1512001/memorybox/releases/download/v0.3.0/memorybox_0.3.0_linux_arm64.tar.gz"
-      sha256 "b4584f50df39a90d58a7fa9d503ec2bd06e9b290ebf2a8950f64cb3b77beaee2"
+      url "https://github.com/up1512001/memorybox/releases/download/v0.4.0/memorybox_0.4.0_linux_arm64.tar.gz"
+      sha256 "a5838a6619828fabed0bbaf19c7be1c29afb504022959623bb8ef0d17eb05697"
       define_method(:install) do
         bin.install "membox"
       end
